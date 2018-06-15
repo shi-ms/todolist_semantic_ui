@@ -1,3 +1,28 @@
 .container {
     margin-top: 100px;
 }
+
+#main-list {
+    margin: 0 auto;
+    width: 60%;
+}
+
+#new-todo {
+    margin: 20px 0;
+}
+
+#new-todo-form {
+    display: inline;
+}
+
+#edit-todo-form {
+    display: inline;
+}
+
+#delete-todo-form {
+    display: inline;
+}
+
+#new-todo-input {
+    display: none;
+}

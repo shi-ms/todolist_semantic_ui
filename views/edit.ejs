@@ -1,0 +1,15 @@
+<% include ./partials/header %>
+
+<div class="ui container">
+    <h1 class="ui center aligned header">
+        Edit your todo
+    </h1>
+    <form class="ui form" id="edit-todo-form" action="/todo/<%= todo._id%>?_method=PUT" method="POST">
+        <div class="ui action small fluid input">
+            <input type="text" name="todo[content]" value="<%= todo.content %>">
+            <button class="ui blue button">update</button>
+        </div>
+    </form>
+</div>
+
+<% include ./partials/footer %>

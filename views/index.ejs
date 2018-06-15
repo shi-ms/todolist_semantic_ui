@@ -1,0 +1,41 @@
+<% include ./partials/header %>
+
+<div class="ui container">
+    <h1 class="ui center aligned header">
+        Hi Mingshu. Have new things to do?
+    </h1>
+    <div class="ui middle aligned divided list" id="main-list">
+        <div class="item" id="new-todo">
+            <a href="/todo/new" class="ui basic button">
+                <i class="plus blue icon"></i>
+                New Todo
+            </a>
+            <div class="ui action small input" id="new-todo-input">
+                <input type="text" placeholder="add your new todo">
+                <button class="ui blue button">add</button>
+            </div>
+        </div>
+        
+        <% todo.forEach(function(element){ %>
+            <div class="item">
+                <div class="right floated content">
+                    <a href="/todo/<%= element._id %>/edit" class="ui mini button edit-button">edit</a>
+                    <form class="ui form" id="delete-todo-form" action="/todo/<%= element._id %>?_method=DELETE" method="POST">
+                        <button class="ui mini button delete-button">delete</button>
+                    </form>
+                </div>
+                <div class="content">
+                    <div class="ui checkbox">
+                        <input type="checkbox" tabindex="0">
+                        <label><%= element.content %></label>
+                    </div>
+                </div>
+            </div>
+        <% }) %>
+        
+    </div>
+</div>
+
+
+
+<% include ./partials/footer %>
