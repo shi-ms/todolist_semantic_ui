@@ -2,6 +2,10 @@
     margin-top: 100px;
 }
 
+.completed {
+    text-decoration: line-through;
+}
+
 #main-list {
     margin: 0 auto;
     width: 60%;
