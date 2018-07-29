@@ -7,7 +7,7 @@ var express = require("express"),
     LocalStrategy = require("passport-local"),
     expressSession = require("express-session"),
     passportLocalMongoose = require("passport-local-mongoose");
-    
+
 
 
 //-------------Setting database----------------------
@@ -18,7 +18,7 @@ mongoose.connect(databaseURL);
 //---------------------------------------------------
 
 //----------------------------------------Model Setting-------------------------
-// User model 
+// User model
 var userSchema = new mongoose.Schema({
     username:String,
     password:String
@@ -193,6 +193,6 @@ function isLoggedIn(req,res,next){
 }
 
 
-app.listen(process.env.PORT, process.env.IP, function(){
+app.listen(process.env.PORT || 3000, process.env.IP, function(){
     console.log("The todo list server is now starting......");
 });
